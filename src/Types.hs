@@ -1,4 +1,4 @@
-module Types where
+module Types(PongGame(..), width, height, playerWidth, playerHeight, moveOffset, fps) where
 
 data PongGame = Game{
     ballLoc :: (Float, Float),

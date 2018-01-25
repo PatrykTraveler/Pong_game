@@ -1,2 +1,6 @@
+import Test.QuickCheck
+import Lib
+import Types
+
 main :: IO ()
-main = putStrLn "Test suite not yet implemented"
+main = quickCheck wallCollision

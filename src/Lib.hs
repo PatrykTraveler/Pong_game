@@ -1,4 +1,4 @@
-module Lib(doPong) where
+module Lib(doPong, wallCollision) where
     import Graphics.Gloss
     import Graphics.Gloss.Data.ViewPort
     import Graphics.Gloss.Interface.Pure.Game
