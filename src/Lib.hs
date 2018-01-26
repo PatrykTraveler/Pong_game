@@ -1,22 +1,30 @@
-module Lib(doPong, wallCollision) where
+{- | 
+    Main game module
+ -}
+
+module Lib where
     import Graphics.Gloss
     import Graphics.Gloss.Data.ViewPort
     import Graphics.Gloss.Interface.Pure.Game
-
     import Types
-    --utility functions
+
+
+    -- | Function that sets game seed
     updateSeed :: PongGame -> PongGame
     updateSeed game = game {seed = seed'}
         where 
             prev = seed game
             seed' = (1103515245 * prev + 12345) `mod` (2^32) 
     
+    -- | Game window declaration, uses values of 'Types.width' and 'Types.height' from 'Types' module
     window :: Display
     window = InWindow "Pong" (width, height) (10,10)
     
+    -- | Sets the background color
     background :: Color
     background = white
     
+    -- | Renders current view of the game 
     render :: PongGame -> Picture 
     render game =
         pictures [ball, mkPaddle black (fromIntegral (width `div` 2 - playerWidth `div` 2)) $ player1 game, 
@@ -28,6 +36,7 @@ module Lib(doPong, wallCollision) where
             mkPaddle :: Color -> Float -> Float -> Picture
             mkPaddle col x y = translate x y $ color col $ rectangleSolid (fromIntegral playerWidth) (fromIntegral playerHeight)
     
+    -- | Sets the game to starting values
     initialState :: PongGame
     initialState = Game{
         ballLoc = (-30, -60),
@@ -39,6 +48,7 @@ module Lib(doPong, wallCollision) where
         seed = 149327498
     }
     
+    -- | Function that draws the ball during the game
     moveBall :: Float -> PongGame -> PongGame
     moveBall seconds game = game { ballLoc = (x', y')}
         where
@@ -47,16 +57,21 @@ module Lib(doPong, wallCollision) where
     
             x' = x + vx * seconds
             y' = y + vy * seconds
-    
+    -- | Type used to store ball radius
     type Radius = Float
+
+    -- | Type used to store position
     type Position = (Float, Float)
     
+    -- | Function that checks if ball collides with wall
     wallCollision :: Position -> Radius -> Bool
     wallCollision (_, y) radius = topCollision || bottomCollision
         where
             topCollision = (y - radius) <= (-fromIntegral width/2)
             bottomCollision = (y + radius) >= (fromIntegral width/2)
     
+
+    -- | Function that checks if ball collides with paddle      
     paddleCollision :: Position -> Float -> Float -> Radius -> Bool
     paddleCollision (x, y) p1 p2 radius = p1Collision || p2Collision
         where
@@ -64,6 +79,7 @@ module Lib(doPong, wallCollision) where
     
             p2Collision = (x - radius) <= (fromIntegral(-width `div` 2 + playerWidth)) && (y + radius) <= (p2 + fromIntegral playerHeight/2) && (y - radius) >= (p2 - fromIntegral playerHeight/2)
     
+    -- | Function that switches the ball direction after collision
     ballBounce :: PongGame -> PongGame
     ballBounce game = game { ballVel = (vx', vy') }
         where
@@ -80,6 +96,7 @@ module Lib(doPong, wallCollision) where
                 else
                     vx
     
+    -- | Function that gets player move 
     playerMovement :: PongGame -> Int -> PongGame
     playerMovement game offset = game { player1 = y'}
         where
@@ -89,6 +106,7 @@ module Lib(doPong, wallCollision) where
                 else 
                     y
     
+    -- | Function that calculate computer move               
     computerMovement :: PongGame -> PongGame
     computerMovement game = game { player2 = y'}
         where 
@@ -109,13 +127,14 @@ module Lib(doPong, wallCollision) where
                 where 
                     radius = 5
     
-    
+    -- | Function that moves player
     movePlayer :: PongGame -> PongGame
     movePlayer game 
         | stateUpClick game = playerMovement game moveOffset
         | stateDownClick game = playerMovement game (-moveOffset)
         | otherwise = game
     
+    -- | Function that resets ball position after collision with right or left wall
     resetBall :: PongGame -> PongGame
     resetBall game = game { ballLoc = (x', y')}
         where
@@ -125,10 +144,11 @@ module Lib(doPong, wallCollision) where
             x' = if abs x > fromIntegral width/2 then fromIntegral randomX else x
             y' = if abs y > fromIntegral height/2 then fromIntegral randomY else y
                 
-    
+    -- | Function that updates view
     update :: Float -> PongGame -> PongGame
     update seconds = movePlayer . computerMovement . moveBall seconds . ballBounce . resetBall
     
+    -- | Function that takes player's input
     handleKeys :: Event -> PongGame -> PongGame
     handleKeys event game 
         | (EventKey (SpecialKey KeyUp) Down _ _) <- event 
@@ -141,5 +161,6 @@ module Lib(doPong, wallCollision) where
         = game {stateDownClick = False}
         | otherwise = game
     
+    -- | Function that runs the game
     doPong :: IO ()
     doPong = play window background fps initialState render handleKeys update
