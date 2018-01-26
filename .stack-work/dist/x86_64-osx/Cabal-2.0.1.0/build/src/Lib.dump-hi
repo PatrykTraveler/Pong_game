@@ -1,0 +1,866 @@
+
+==================== FINAL INTERFACE ====================
+2018-01-26 16:42:51.569213 UTC
+
+interface pong-0.1.0.0-45Av3NiH7k27u3wdtFfT3A:Lib 8022
+  interface hash: cc1661e0136c8df33ff821fe4e5d7709
+  ABI hash: 9159e805b73e4d1648a489bc606000ec
+  export-list hash: a44488d447294f8bd9b9f707c2e2b13d
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 0451a77cc0d8e5d99d548d6441c7dd35
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Lib.background
+  Lib.ballBounce
+  Lib.computerMovement
+  Lib.doPong
+  Lib.handleKeys
+  Lib.initialState
+  Lib.moveBall
+  Lib.movePlayer
+  Lib.paddleCollision
+  Lib.playerMovement
+  Lib.render
+  Lib.resetBall
+  Lib.update
+  Lib.updateSeed
+  Lib.wallCollision
+  Lib.window
+  Lib.Position
+  Lib.Radius
+module dependencies: Types
+package dependencies: GLURaw-2.0.0.3 GLUT-2.7.0.12
+                      ObjectName-1.1.0.1 OpenGL-3.0.2.0 OpenGLRaw-3.2.7.0
+                      StateVar-1.1.0.4 array-0.5.2.0 base-4.10.1.0 binary-0.8.5.1
+                      bmp-1.2.6.3 bytestring-0.10.8.2 containers-0.5.10.2 deepseq-1.4.3.0
+                      fixed-0.2.1.1 ghc-prim-0.5.1.1 gloss-1.11.1.1
+                      gloss-rendering-1.11.1.1 half-0.2.2.3 integer-gmp-1.0.1.0
+                      stm-2.4.4.1 text-1.2.2.2
+orphans: gloss-rendering-1.11.1.1:Graphics.Gloss.Internals.Data.Picture
+         stm-2.4.4.1:Control.Monad.STM text-1.2.2.2:Data.Text
+         binary-0.8.5.1:Data.Binary.Generic text-1.2.2.2:Data.Text.Show
+         bytestring-0.10.8.2:Data.ByteString.Builder base-4.10.1.0:GHC.Float
+         base-4.10.1.0:GHC.Base
+family instance modules: base-4.10.1.0:Control.Applicative
+                         base-4.10.1.0:Data.Complex base-4.10.1.0:Data.Either
+                         base-4.10.1.0:Data.Functor.Compose base-4.10.1.0:Data.Functor.Const
+                         base-4.10.1.0:Data.Functor.Identity
+                         base-4.10.1.0:Data.Functor.Product base-4.10.1.0:Data.Functor.Sum
+                         base-4.10.1.0:Data.List.NonEmpty base-4.10.1.0:Data.Monoid
+                         base-4.10.1.0:Data.Semigroup base-4.10.1.0:Data.Type.Equality
+                         base-4.10.1.0:Data.Version base-4.10.1.0:Data.Void
+                         base-4.10.1.0:GHC.Exts base-4.10.1.0:GHC.Generics
+                         base-4.10.1.0:GHC.IO.Exception base-4.10.1.0:GHC.TypeLits
+                         base-4.10.1.0:GHC.TypeNats containers-0.5.10.2:Data.IntMap.Internal
+                         containers-0.5.10.2:Data.IntSet.Internal
+                         containers-0.5.10.2:Data.Map.Internal
+                         containers-0.5.10.2:Data.Sequence.Internal
+                         containers-0.5.10.2:Data.Set.Internal containers-0.5.10.2:Data.Tree
+                         text-1.2.2.2:Data.Text
+import  -/  base-4.10.1.0:Data.Tuple 8fa1305aa5032ea35e2a54fa5f1e78f9
+import  -/  base-4.10.1.0:GHC.Base 782fd99b5e36f3698a26179a49afca64
+import  -/  base-4.10.1.0:GHC.Num 6e1dc5d36d99a802edb39b92bb1923b8
+import  -/  base-4.10.1.0:GHC.Real 3c62834bc25e762eabc44149c4cc142d
+import  -/  base-4.10.1.0:Prelude 31945b7d0084063347fc52506d3a4020
+import  -/  ghc-prim-0.5.1.1:GHC.Classes 93e2660065dce9329577e83d76d8f0d4
+import  -/  ghc-prim-0.5.1.1:GHC.Types b1fd0716441595db508c1a74387bf394
+import  -/  gloss-1.11.1.1:Graphics.Gloss a6a901a4ee6170abd11f88f556488097
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.Color 1cb2bbb1f8ca4688bf8e8f03853a6e15
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.Display 0584c981ac46d2974e92544e0b9edf2c
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.Picture 9b243eefd25c72e1c2d28bafadb5793c
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.ViewPort 6c1f312512c2a70f4fcbdb0cb2921679
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Interface.Pure.Game 5543634df7bdd1d84cc72bc8c3c7ecd9
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Internals.Interface.Backend.Types e9f36772aaa47b9123c9f37541e37a9b
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Internals.Interface.Event 3b6ffc1e24126c954a6d04d4ea54b159
+import  -/  gloss-rendering-1.11.1.1:Graphics.Gloss.Internals.Data.Color 67e41f501ac28fdfb0b383296bc15e4c
+import  -/  gloss-rendering-1.11.1.1:Graphics.Gloss.Internals.Data.Picture a2aba047311a781e62a059c8bbcbbd90
+import  -/  Types 54a1f4cc6d0331760c13d68e0b2a5810
+  exports: c9903c023b7a2b8e0da49e31889ea802
+  Game 030f09b35e20b30bb5174fca95a0859b
+  PongGame 726f6eb892a79a33738a50af95c728e5
+  ballLoc 726f6eb892a79a33738a50af95c728e5
+  ballVel 726f6eb892a79a33738a50af95c728e5
+  fps 611442d4fbf1f46ca033908f32383c56
+  height 6cebd42c3ec4ac0ae3af8bc5a8a0371b
+  moveOffset 0b8a01acb3249da66a1c6c012a4011fb
+  player1 726f6eb892a79a33738a50af95c728e5
+  player2 726f6eb892a79a33738a50af95c728e5
+  playerHeight c699194af3a42f8e7e03c9215950f8e4
+  playerWidth 2ba853501281ddf1350c02fb8af83d19
+  seed 726f6eb892a79a33738a50af95c728e5
+  stateDownClick 726f6eb892a79a33738a50af95c728e5
+  stateUpClick 726f6eb892a79a33738a50af95c728e5
+  width 22ab7d56fb87b518ecdee3e1b824d0f9
+3a86fd617b33ecefbc0fe0b717a518d5
+  $s^1 :: GHC.Types.Int
+  {- Strictness: x -}
+95104af48004c2c4c6d5c9a856e67431
+  $s^2 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (0) -}
+6d0b7cefab391f14187f6a3ced12455b
+  $seven1 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (2) -}
+e710dc3508e48a579a6fffb7a226ae6d
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Lib.$trModule3 Lib.$trModule1) -}
+c87b20ceb464ccab9f985b34034e1ae3
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Lib.$trModule2) -}
+2b02c231cba39120f739886cc42b8e32
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Lib"#) -}
+59b13763a00686764ef6c488564f2c1c
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Lib.$trModule4) -}
+040a698908dff4617c060425800c52bf
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("pong-0.1.0.0-45Av3NiH7k27u3wdtFfT3A"#) -}
+be71cda30b260f796cd27aefb514492c
+  $w$s^ :: GHC.Types.Int -> GHC.Integer.Type.Integer -> GHC.Prim.Int#
+  {- Arity: 2, Strictness: <L,1*U(U)><S,U>, Inline: [0],
+     Unfolding: (\ (w :: GHC.Types.Int)
+                   (w1 :: GHC.Integer.Type.Integer) ->
+                 case GHC.Integer.Type.ltInteger# w1 Lib.$s^2 of wild { DEFAULT ->
+                 case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild of wild1 {
+                   GHC.Types.False
+                   -> case GHC.Integer.Type.eqInteger#
+                             w1
+                             Lib.$s^2 of wild2 { DEFAULT ->
+                      case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild2 of wild3 {
+                        GHC.Types.False
+                        -> case w of ww { GHC.Types.I# ww1 -> Lib.$wf ww1 w1 }
+                        GHC.Types.True -> 1# } }
+                   GHC.Types.True -> case Lib.$s^1 ret_ty GHC.Prim.Int# of {} } }) -}
+76db9b2389e742cb3dd5af012e07da97
+  $wballBounce ::
+    (GHC.Types.Float, GHC.Types.Float)
+    -> (GHC.Types.Float, GHC.Types.Float)
+    -> GHC.Types.Float
+    -> GHC.Types.Float
+    -> GHC.Types.Bool
+    -> GHC.Types.Bool
+    -> GHC.Prim.Int#
+    -> (# (GHC.Types.Float, GHC.Types.Float),
+          (GHC.Types.Float, GHC.Types.Float), GHC.Types.Float,
+          GHC.Types.Float, GHC.Types.Bool, GHC.Types.Bool, GHC.Prim.Int# #)
+  {- Arity: 7, HasNoCafRefs,
+     Strictness: <L,U(U(U),U(U))><L,U(1*U(U),1*U(U))><L,U(U)><L,U(U)><L,U><L,U><S,U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: (GHC.Types.Float, GHC.Types.Float))
+                   (ww1 :: (GHC.Types.Float, GHC.Types.Float))
+                   (ww2 :: GHC.Types.Float)
+                   (ww3 :: GHC.Types.Float)
+                   (ww4 :: GHC.Types.Bool)
+                   (ww5 :: GHC.Types.Bool)
+                   (ww6 :: GHC.Prim.Int#) ->
+                 (# ww,
+                    (case ww of ww7 { (,) ww8 ww9 ->
+                     case ww8 of ww10 { GHC.Types.F# ww11 ->
+                     case Lib.$wpaddleCollision ww11 ww9 ww2 ww3 5.0# of wild {
+                       GHC.Types.False -> case ww1 of wild1 { (,) vx vy -> vx }
+                       GHC.Types.True
+                       -> case ww1 of wild1 { (,) vx vy ->
+                          case vx of wild2 { GHC.Types.F# x ->
+                          GHC.Types.F# (GHC.Prim.negateFloat# x) } } } } },
+                     case ww of wild { (,) ds y ->
+                     case y of wild2 { GHC.Types.F# x ->
+                     case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.leFloat#
+                               (GHC.Prim.minusFloat# x 5.0#)
+                               -150.0#) of wild1 {
+                       GHC.Types.False
+                       -> case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.geFloat# (GHC.Prim.plusFloat# x 5.0#) 150.0#) of wild3 {
+                            GHC.Types.False -> case ww1 of wild4 { (,) vx vy -> vy }
+                            GHC.Types.True
+                            -> case ww1 of wild4 { (,) vx vy ->
+                               case vy of wild5 { GHC.Types.F# x1 ->
+                               GHC.Types.F# (GHC.Prim.negateFloat# x1) } } }
+                       GHC.Types.True
+                       -> case ww1 of wild3 { (,) vx vy ->
+                          case vy of wild4 { GHC.Types.F# x1 ->
+                          GHC.Types.F# (GHC.Prim.negateFloat# x1) } } } } }),
+                    ww2, ww3, ww4, ww5, ww6 #)) -}
+7fef7a2fabcb09b750edf951fd3bee2b
+  $wf :: GHC.Prim.Int# -> GHC.Integer.Type.Integer -> GHC.Prim.Int#
+  {- Arity: 2, Strictness: <S,U><S,U>, Inline: [0] -}
+ef6e88a196be07ec72a65d3402c81752
+  $wpaddleCollision ::
+    GHC.Prim.Float#
+    -> GHC.Types.Float
+    -> GHC.Types.Float
+    -> GHC.Types.Float
+    -> GHC.Prim.Float#
+    -> GHC.Types.Bool
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S,U><L,U(U)><L,1*U(U)><L,1*U(U)><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Float#)
+                   (ww1 :: GHC.Types.Float)
+                   (w :: GHC.Types.Float)
+                   (w1 :: GHC.Types.Float)
+                   (ww2 :: GHC.Prim.Float#) ->
+                 let {
+                   $j :: GHC.Types.Bool <join 0>
+                   = case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.leFloat# (GHC.Prim.minusFloat# ww ww2) -140.0#) of wild {
+                       GHC.Types.False -> GHC.Types.False
+                       GHC.Types.True
+                       -> case ww1 of wild2 { GHC.Types.F# x ->
+                          case w1 of wild1 { GHC.Types.F# x1 ->
+                          case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.leFloat#
+                                    (GHC.Prim.plusFloat# x ww2)
+                                    (GHC.Prim.plusFloat# x1 40.0#)) of wild3 {
+                            GHC.Types.False -> GHC.Types.False
+                            GHC.Types.True
+                            -> GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.geFloat#
+                                    (GHC.Prim.minusFloat# x ww2)
+                                    (GHC.Prim.minusFloat# x1 40.0#)) } } } }
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.geFloat# (GHC.Prim.plusFloat# ww ww2) 140.0#) of wild {
+                   GHC.Types.False -> $j
+                   GHC.Types.True
+                   -> case ww1 of wild2 { GHC.Types.F# x ->
+                      case w of wild1 { GHC.Types.F# x1 ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.leFloat#
+                                (GHC.Prim.plusFloat# x ww2)
+                                (GHC.Prim.plusFloat# x1 40.0#)) of wild3 {
+                        GHC.Types.False -> $j
+                        GHC.Types.True
+                        -> case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.geFloat#
+                                     (GHC.Prim.minusFloat# x ww2)
+                                     (GHC.Prim.minusFloat# x1 40.0#)) of wild4 {
+                             GHC.Types.False -> $j
+                             GHC.Types.True -> GHC.Types.True } } } } }) -}
+71cec6010445e5e645a8590efcd9e964
+  $wrender ::
+    Types.PongGame
+    -> (# [Graphics.Gloss.Internals.Data.Picture.Picture] #)
+  {- Arity: 1, Strictness: <L,U(1*U(1*U,1*U),A,1*U(U),1*U(U),A,A,A)>,
+     Inline: [0],
+     Unfolding: (\ (w :: Types.PongGame) ->
+                 (# GHC.Types.:
+                      @ Graphics.Gloss.Internals.Data.Picture.Picture
+                      (let {
+                         p :: (GHC.Types.Float, GHC.Types.Float)
+                         = case w of wild { Types.Game ds1 ds2 ds3 ds4 ds5 ds6 dt -> ds1 }
+                       } in
+                       Graphics.Gloss.Internals.Data.Picture.Translate
+                         (case p of wild { (,) x ds -> x })
+                         (case p of wild { (,) ds y -> y })
+                         Lib.render9)
+                      (GHC.Types.:
+                         @ Graphics.Gloss.Internals.Data.Picture.Picture
+                         (Graphics.Gloss.Internals.Data.Picture.Translate
+                            Lib.render8
+                            (Types.player1 w)
+                            Lib.render7)
+                         (GHC.Types.:
+                            @ Graphics.Gloss.Internals.Data.Picture.Picture
+                            (Graphics.Gloss.Internals.Data.Picture.Translate
+                               Lib.render6
+                               (Types.player2 w)
+                               Lib.render1)
+                            (GHC.Types.[]
+                               @ Graphics.Gloss.Internals.Data.Picture.Picture))) #)) -}
+7e8f8fe0be2eb4e57a822c08ae59e2d3
+  $wupdate ::
+    GHC.Types.Float
+    -> (GHC.Types.Float, GHC.Types.Float)
+    -> (GHC.Types.Float, GHC.Types.Float)
+    -> GHC.Types.Float
+    -> GHC.Types.Float
+    -> GHC.Types.Bool
+    -> GHC.Types.Bool
+    -> GHC.Prim.Int#
+    -> (# (GHC.Types.Float, GHC.Types.Float),
+          (GHC.Types.Float, GHC.Types.Float), GHC.Types.Float,
+          GHC.Types.Float, GHC.Types.Bool, GHC.Types.Bool, GHC.Prim.Int# #)
+  {- Arity: 8, HasNoCafRefs,
+     Strictness: <L,U(U)><L,U(1*U(U),1*U(U))><L,U(1*U(U),1*U(U))><L,U(U)><L,U(U)><S,1*U><L,U><S,U>,
+     Inline: [0] -}
+c2d1d58e8396660529c81b897fe11a8c
+  type Position = (GHC.Types.Float, GHC.Types.Float)
+b8e79f76efc92dba43f4be4f74112600
+  type Radius = GHC.Types.Float
+86a4085542629bc266a7acd1b9b6d9ce
+  background :: Graphics.Gloss.Internals.Data.Color.Color
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Graphics.Gloss.Data.Color.white -}
+3e8138a07ea7af8b940e901dbbf9f5a3
+  ballBounce :: Types.PongGame -> Types.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSSS),1*U(U(U(U),U(U)),U(U(U),U(U)),U(U),U(U),U,U,U)>m,
+     Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Types.PongGame) ->
+                 case w of ww { Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 case Lib.$wballBounce
+                        ww1
+                        ww2
+                        ww3
+                        ww4
+                        ww5
+                        ww6
+                        ww7 of ww8 { (#,,,,,,#) ww9 ww10 ww11 ww12 ww13 ww14 ww15 ->
+                 Types.Game ww9 ww10 ww11 ww12 ww13 ww14 ww15 } }) -}
+934e2fc9d3cb813334f56d62bb776a35
+  computerMovement :: Types.PongGame -> Types.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSSS),1*U(U(U,U(U)),U,U,1*U(U),U,U,U)>m,
+     Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Types.PongGame) ->
+                 case w of ww { Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 Types.Game
+                   ww1
+                   ww2
+                   ww3
+                   (case ww1 of wild { (,) px py ->
+                    case py of wild2 { GHC.Types.F# x ->
+                    case ww4 of wild1 { GHC.Types.F# x1 ->
+                    case GHC.Prim.tagToEnum#
+                           @ GHC.Types.Bool
+                           (GHC.Prim.leFloat#
+                              (GHC.Prim.plusFloat# x 5.0#)
+                              (GHC.Prim.plusFloat# x1 40.0#)) of wild3 {
+                      GHC.Types.False
+                      -> case GHC.Prim.tagToEnum#
+                                @ GHC.Types.Bool
+                                (GHC.Prim.gtFloat# x1 x) of wild4 {
+                           GHC.Types.False -> GHC.Types.F# (GHC.Prim.plusFloat# x1 3.0#)
+                           GHC.Types.True -> GHC.Types.F# (GHC.Prim.minusFloat# x1 3.0#) }
+                      GHC.Types.True
+                      -> case GHC.Prim.tagToEnum#
+                                @ GHC.Types.Bool
+                                (GHC.Prim.geFloat#
+                                   (GHC.Prim.minusFloat# x 5.0#)
+                                   (GHC.Prim.minusFloat# x1 40.0#)) of wild4 {
+                           GHC.Types.False
+                           -> case GHC.Prim.tagToEnum#
+                                     @ GHC.Types.Bool
+                                     (GHC.Prim.gtFloat# x1 x) of wild5 {
+                                GHC.Types.False -> GHC.Types.F# (GHC.Prim.plusFloat# x1 3.0#)
+                                GHC.Types.True -> GHC.Types.F# (GHC.Prim.minusFloat# x1 3.0#) }
+                           GHC.Types.True -> wild1 } } } } })
+                   ww5
+                   ww6
+                   ww7 }) -}
+91070da89c74b7af7e38609aed9e0009
+  doPong :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.doPong1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+147e96d30bead1e4b3bed2e6ccc91f6d
+  doPong1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Graphics.Gloss.Internals.Interface.Game.playWithBackendIO1
+                        @ Types.PongGame
+                        @ Graphics.Gloss.Internals.Interface.Backend.GLUT.GLUTState
+                        Graphics.Gloss.Internals.Interface.Backend.GLUT.$fBackendGLUTState
+                        Graphics.Gloss.Internals.Interface.Backend.GLUT.glutStateInit
+                        Lib.window
+                        Graphics.Gloss.Data.Color.white
+                        Types.fps
+                        Lib.initialState
+                        Lib.doPong4
+                          `cast`
+                        (<Types.PongGame>_R
+                         ->_R Sym (GHC.Types.N:IO[0]
+                                       <Graphics.Gloss.Internals.Data.Picture.Picture>_R))
+                        Lib.doPong3
+                          `cast`
+                        (<Graphics.Gloss.Internals.Interface.Event.Event>_R
+                         ->_R <Types.PongGame>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <Types.PongGame>_R))
+                        Lib.doPong2
+                          `cast`
+                        (<GHC.Types.Float>_R
+                         ->_R <Types.PongGame>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <Types.PongGame>_R))
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv, GHC.Tuple.() #) }) -}
+bba855bcb07db83d75785d783acbd565
+  doPong2 ::
+    GHC.Types.Float
+    -> Types.PongGame
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Types.PongGame #)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(U)><L,1*U(U(U(U),U(U)),U(U(U),U(U)),U(U),U(U),U,U,U)><S,U>,
+     Unfolding: (\ (time :: GHC.Types.Float)
+                   (world1 :: Types.PongGame)
+                   (s1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 (# s1, Lib.update time world1 #)) -}
+5d2623c1acb9ff9f056f12828dcae5d0
+  doPong3 ::
+    Graphics.Gloss.Internals.Interface.Event.Event
+    -> Types.PongGame
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Types.PongGame #)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U><L,1*U(U,U,U,U,U,U,U)><S,U>,
+     Unfolding: (\ (event :: Graphics.Gloss.Internals.Interface.Event.Event)
+                   (world1 :: Types.PongGame)[OneShot]
+                   (s1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s1, Lib.handleKeys event world1 #)) -}
+3c147a0843839d7e84aeadec841a3b5c
+  doPong4 ::
+    Types.PongGame
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Graphics.Gloss.Internals.Data.Picture.Picture #)
+  {- Arity: 2, Strictness: <L,U(U(U,U),A,U(U),U(U),A,A,A)><S,U>,
+     Unfolding: (\ (x :: Types.PongGame)
+                   (s1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s1, Lib.render x #)) -}
+38b79495b4684829c397c79ea7d329fe
+  handleKeys ::
+    Graphics.Gloss.Internals.Interface.Event.Event
+    -> Types.PongGame -> Types.PongGame
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S,U><S(LLLLSSL),1*U(U,U,U,U,U,U,U)>m, Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Graphics.Gloss.Internals.Interface.Event.Event)
+                   (w1 :: Types.PongGame) ->
+                 case w1 of ww { Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 let {
+                   fail :: GHC.Prim.Void# -> Types.PongGame
+                     <join 1> {- Arity: 1, Strictness: <L,A>m -}
+                   = \ (ds :: GHC.Prim.Void#)[OneShot] ->
+                     case w of wild {
+                       DEFAULT -> Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7
+                       Graphics.Gloss.Internals.Interface.Event.EventKey ds1 ds2 ds3 ds4
+                       -> case ds1 of wild1 {
+                            DEFAULT -> Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7
+                            Graphics.Gloss.Internals.Interface.Backend.Types.SpecialKey ds5
+                            -> case ds5 of wild2 {
+                                 DEFAULT -> Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7
+                                 Graphics.Gloss.Internals.Interface.Backend.Types.KeyUp
+                                 -> case ds2 of wild3 {
+                                      Graphics.Gloss.Internals.Interface.Backend.Types.Down
+                                      -> Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7
+                                      Graphics.Gloss.Internals.Interface.Backend.Types.Up
+                                      -> Types.Game ww1 ww2 ww3 ww4 GHC.Types.False ww6 ww7 }
+                                 Graphics.Gloss.Internals.Interface.Backend.Types.KeyDown
+                                 -> case ds2 of wild3 {
+                                      Graphics.Gloss.Internals.Interface.Backend.Types.Down
+                                      -> Types.Game ww1 ww2 ww3 ww4 ww5 GHC.Types.True ww7
+                                      Graphics.Gloss.Internals.Interface.Backend.Types.Up
+                                      -> Types.Game ww1 ww2 ww3 ww4 ww5 GHC.Types.False ww7 } } } }
+                 } in
+                 case w of wild {
+                   DEFAULT -> fail GHC.Prim.void#
+                   Graphics.Gloss.Internals.Interface.Event.EventKey ds ds1 ds2 ds3
+                   -> case ds of wild1 {
+                        DEFAULT -> fail GHC.Prim.void#
+                        Graphics.Gloss.Internals.Interface.Backend.Types.SpecialKey ds4
+                        -> case ds4 of wild2 {
+                             DEFAULT -> fail GHC.Prim.void#
+                             Graphics.Gloss.Internals.Interface.Backend.Types.KeyUp
+                             -> case ds1 of wild3 {
+                                  Graphics.Gloss.Internals.Interface.Backend.Types.Down
+                                  -> Types.Game ww1 ww2 ww3 ww4 GHC.Types.True ww6 ww7
+                                  Graphics.Gloss.Internals.Interface.Backend.Types.Up
+                                  -> fail GHC.Prim.void# } } } } }) -}
+3e1f2d995fc081ba8a6499bb0455e049
+  initialState :: Types.PongGame
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Types.Game
+                   Lib.initialState4
+                   Lib.initialState2
+                   Lib.initialState1
+                   Lib.render4
+                   GHC.Types.False
+                   GHC.Types.False
+                   149327498#) -}
+24605bb7799e8665323fddd5828da141
+  initialState1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 40.0#) -}
+12e1679fddae4d6fd5c30c07f233f5da
+  initialState2 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Lib.initialState3, Lib.initialState3)) -}
+35622d5b948994a1630f6da7c383bca1
+  initialState3 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 100.0#) -}
+818c4a24062317a16c2942ad81e94d19
+  initialState4 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Lib.initialState6, Lib.initialState5)) -}
+0b16bd7151ef088d39b26d1a7bd8297a
+  initialState5 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# -60.0#) -}
+9be4daf23439e052a9ede7e69d7a41c7
+  initialState6 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# -30.0#) -}
+938774e403b469813aba7ee332b94b98
+  moveBall :: GHC.Types.Float -> Types.PongGame -> Types.PongGame
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U)><S(LLLLSSS),1*U(U(1*U(U),1*U(U)),U(U(U),U(U)),U,U,U,U,U)>m,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Float) (w1 :: Types.PongGame) ->
+                 case w1 of ww { Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 Types.Game
+                   (case ww1 of wild { (,) x y ->
+                    case x of wild2 { GHC.Types.F# x1 ->
+                    case ww2 of wild1 { (,) vx vy ->
+                    case vx of wild3 { GHC.Types.F# x2 ->
+                    case w of wild4 { GHC.Types.F# y1 ->
+                    GHC.Types.F#
+                      (GHC.Prim.plusFloat# x1 (GHC.Prim.timesFloat# x2 y1)) } } } } },
+                    case ww1 of wild { (,) x y ->
+                    case y of wild2 { GHC.Types.F# x1 ->
+                    case ww2 of wild1 { (,) vx vy ->
+                    case vy of wild3 { GHC.Types.F# x2 ->
+                    case w of wild4 { GHC.Types.F# y1 ->
+                    GHC.Types.F#
+                      (GHC.Prim.plusFloat# x1 (GHC.Prim.timesFloat# x2 y1)) } } } } })
+                   ww2
+                   ww3
+                   ww4
+                   ww5
+                   ww6
+                   ww7 }) -}
+aeb042c6a0ab24200c6fd541f3a9f948
+  movePlayer :: Types.PongGame -> Types.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSSS),1*U(U,U,U(U),U,U,U,U)>m, Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Types.PongGame) ->
+                 case w of ww { Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 case ww5 of wild {
+                   GHC.Types.False
+                   -> case ww6 of wild1 {
+                        GHC.Types.False
+                        -> Types.Game ww1 ww2 ww3 ww4 GHC.Types.False GHC.Types.False ww7
+                        GHC.Types.True
+                        -> Types.Game
+                             ww1
+                             ww2
+                             (case ww3 of wild2 { GHC.Types.F# x ->
+                              case GHC.Prim.tagToEnum#
+                                     @ GHC.Types.Bool
+                                     (GHC.Prim.ltFloat#
+                                        (GHC.Prim.fabsFloat#
+                                           (GHC.Prim.plusFloat#
+                                              (GHC.Prim.plusFloat# x -3.0#)
+                                              -40.0#))
+                                        150.0#) of wild3 {
+                                GHC.Types.False -> wild2
+                                GHC.Types.True -> GHC.Types.F# (GHC.Prim.plusFloat# x -3.0#) } })
+                             ww4
+                             GHC.Types.False
+                             GHC.Types.True
+                             ww7 }
+                   GHC.Types.True
+                   -> Types.Game
+                        ww1
+                        ww2
+                        (case ww3 of wild2 { GHC.Types.F# x ->
+                         case GHC.Prim.tagToEnum#
+                                @ GHC.Types.Bool
+                                (GHC.Prim.ltFloat#
+                                   (GHC.Prim.fabsFloat#
+                                      (GHC.Prim.plusFloat# (GHC.Prim.plusFloat# x 3.0#) 40.0#))
+                                   150.0#) of wild1 {
+                           GHC.Types.False -> wild2
+                           GHC.Types.True -> GHC.Types.F# (GHC.Prim.plusFloat# x 3.0#) } })
+                        ww4
+                        GHC.Types.True
+                        ww6
+                        ww7 } }) -}
+c9ec9fd03720d889a121d050cc38c371
+  paddleCollision ::
+    Lib.Position
+    -> GHC.Types.Float
+    -> GHC.Types.Float
+    -> Lib.Radius
+    -> GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),U(U))><L,1*U(U)><L,1*U(U)><S(S),1*U(U)>,
+     Inline: [0],
+     Unfolding: InlineRule (4, True, False)
+                (\ (w :: Lib.Position)
+                   (w1 :: GHC.Types.Float)
+                   (w2 :: GHC.Types.Float)
+                   (w3 :: Lib.Radius) ->
+                 case w of ww { (,) ww1 ww2 ->
+                 case ww1 of ww3 { GHC.Types.F# ww4 ->
+                 case w3 of ww5 { GHC.Types.F# ww6 ->
+                 Lib.$wpaddleCollision ww4 ww2 w1 w2 ww6 } } }) -}
+ad996096b149a7343a57f6634089baad
+  playerMovement :: Types.PongGame -> GHC.Types.Int -> Types.PongGame
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(LLLLSSS),1*U(U,U,1*U(U),U,U,U,U)><L,1*U(U)>m,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Types.PongGame) (w1 :: GHC.Types.Int) ->
+                 case w of ww { Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 Types.Game
+                   ww1
+                   ww2
+                   (case ww3 of wild2 { GHC.Types.F# x ->
+                    case w1 of wild { GHC.Types.I# i ->
+                    case GHC.Prim.tagToEnum#
+                           @ GHC.Types.Bool
+                           (GHC.Prim.<# i 0#) of wild1 {
+                      GHC.Types.False
+                      -> case i of wild4 {
+                           DEFAULT
+                           -> case GHC.Prim.tagToEnum#
+                                     @ GHC.Types.Bool
+                                     (GHC.Prim.ltFloat#
+                                        (GHC.Prim.fabsFloat#
+                                           (GHC.Prim.plusFloat#
+                                              (GHC.Prim.plusFloat# x (GHC.Prim.int2Float# wild4))
+                                              40.0#))
+                                        150.0#) of wild5 {
+                                GHC.Types.False -> wild2
+                                GHC.Types.True
+                                -> GHC.Types.F#
+                                     (GHC.Prim.plusFloat# x (GHC.Prim.int2Float# wild4)) }
+                           0#
+                           -> case GHC.Prim.tagToEnum#
+                                     @ GHC.Types.Bool
+                                     (GHC.Prim.ltFloat# (GHC.Prim.fabsFloat# x) 150.0#) of wild5 {
+                                GHC.Types.False -> wild2 GHC.Types.True -> GHC.Types.F# x } }
+                      GHC.Types.True
+                      -> case GHC.Prim.tagToEnum#
+                                @ GHC.Types.Bool
+                                (GHC.Prim.ltFloat#
+                                   (GHC.Prim.fabsFloat#
+                                      (GHC.Prim.plusFloat#
+                                         (GHC.Prim.plusFloat# x (GHC.Prim.int2Float# i))
+                                         -40.0#))
+                                   150.0#) of wild4 {
+                           GHC.Types.False -> wild2
+                           GHC.Types.True
+                           -> GHC.Types.F#
+                                (GHC.Prim.plusFloat# x (GHC.Prim.int2Float# i)) } } } })
+                   ww4
+                   ww5
+                   ww6
+                   ww7 }) -}
+b77b4fd0e91fe84c625bbe8b10001129
+  render ::
+    Types.PongGame -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <L,U(U(U,U),A,U(U),U(U),A,A,A)>m14,
+     Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Types.PongGame) ->
+                 case Lib.$wrender w of ww { Unit# ww1 ->
+                 Graphics.Gloss.Internals.Data.Picture.Pictures ww1 }) -}
+3d1e2ed49fbd8b737b199c28657af7fb
+  render1 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m10,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
+                   Graphics.Gloss.Data.Color.red
+                   Lib.render2) -}
+e71893f48207f8efadbbb5ca1c169763
+  render10 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m2,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Polygon
+                   Lib.render11) -}
+c60d5a9d181142e17e4514eaae265d34
+  render11 :: Graphics.Gloss.Internals.Data.Picture.Path
+  {- Unfolding: (case Graphics.Gloss.Data.Picture.$wrectanglePath
+                        Lib.render5
+                        Lib.render5 of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.:
+                   @ Graphics.Gloss.Internals.Data.Picture.Point
+                   ww1
+                   ww2 }) -}
+b8a040b9e581565e0317280e87db19a7
+  render2 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m2,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Polygon
+                   Lib.render3) -}
+eac180d76bd6c806ae9fc76591516254
+  render3 :: Graphics.Gloss.Internals.Data.Picture.Path
+  {- Unfolding: (case Graphics.Gloss.Data.Picture.$wrectanglePath
+                        Lib.render5
+                        Lib.render4 of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.:
+                   @ Graphics.Gloss.Internals.Data.Picture.Point
+                   ww1
+                   ww2 }) -}
+d03ce46182f064be37164e758319ef59
+  render4 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 80.0#) -}
+6ee21296417cb83bfb85048e699f7b4f
+  render5 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 10.0#) -}
+738f6155858397a531dc743a7e191a47
+  render6 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -145.0#) -}
+4939e8424a1a8cd7d73d7d551c6024c2
+  render7 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m10,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
+                   Graphics.Gloss.Data.Color.black
+                   Lib.render2) -}
+1be5b316abff02736e6054df1879f29a
+  render8 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 145.0#) -}
+5955eb6df9d8b1365a298caaa92822b3
+  render9 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m10,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
+                   Graphics.Gloss.Data.Color.black
+                   Lib.render10) -}
+a8c5dbe57121fbb575b53be4c34331ee
+  resetBall :: Types.PongGame -> Types.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSSS),1*U(U(1*U(U),1*U(U)),U,U,U,U,U,U)>m,
+     Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Types.PongGame) ->
+                 case w of ww { Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 Types.Game
+                   (case ww1 of wild { (,) x y ->
+                    case x of wild2 { GHC.Types.F# x1 ->
+                    case GHC.Prim.tagToEnum#
+                           @ GHC.Types.Bool
+                           (GHC.Prim.gtFloat# (GHC.Prim.fabsFloat# x1) 150.0#) of wild1 {
+                      GHC.Types.False -> wild2
+                      GHC.Types.True
+                      -> case GHC.Classes.modInt# ww7 300# of ww8 { DEFAULT ->
+                         GHC.Types.F# (GHC.Prim.int2Float# (GHC.Prim.-# ww8 150#)) } } } },
+                    case ww1 of wild { (,) x y ->
+                    case y of wild2 { GHC.Types.F# x1 ->
+                    case GHC.Prim.tagToEnum#
+                           @ GHC.Types.Bool
+                           (GHC.Prim.gtFloat# (GHC.Prim.fabsFloat# x1) 150.0#) of wild1 {
+                      GHC.Types.False -> wild2
+                      GHC.Types.True
+                      -> case GHC.Classes.modInt# ww7 300# of ww8 { DEFAULT ->
+                         GHC.Types.F# (GHC.Prim.int2Float# (GHC.Prim.-# ww8 150#)) } } } })
+                   ww2
+                   ww3
+                   ww4
+                   ww5
+                   ww6
+                   ww7 }) -}
+1cbb7c29fe18fc22e7451a055b212941
+  update :: GHC.Types.Float -> Types.PongGame -> Types.PongGame
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U)><S(LLLLSSS),1*U(U(U(U),U(U)),U(U(U),U(U)),U(U),U(U),U,U,U)>m,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Float) (w1 :: Types.PongGame) ->
+                 case w1 of ww { Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 case Lib.$wupdate
+                        w
+                        ww1
+                        ww2
+                        ww3
+                        ww4
+                        ww5
+                        ww6
+                        ww7 of ww8 { (#,,,,,,#) ww9 ww10 ww11 ww12 ww13 ww14 ww15 ->
+                 Types.Game ww9 ww10 ww11 ww12 ww13 ww14 ww15 } }) -}
+5b0a63a9fc9a91c18f7ceacf06010c80
+  updateSeed :: Types.PongGame -> Types.PongGame
+  {- Arity: 1, Strictness: <S(LLLLSSL),1*U(U,U,U,U,U,U,U)>m,
+     Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Types.PongGame) ->
+                 case w of ww { Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 case Lib.updateSeed1 of ww8 { GHC.Types.I# ww9 ->
+                 case ww9 of wild {
+                   DEFAULT
+                   -> case GHC.Classes.modInt#
+                             (GHC.Prim.+# (GHC.Prim.*# 1103515245# ww7) 12345#)
+                             wild of ww10 { DEFAULT ->
+                      Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww10 }
+                   -1# -> Types.Game ww1 ww2 ww3 ww4 ww5 ww6 0#
+                   0#
+                   -> case GHC.Real.divZeroError ret_ty Types.PongGame of {} } } }) -}
+aab10c9d5fe524a78a0635081994b477
+  updateSeed1 :: GHC.Types.Int
+  {- Unfolding: (case Lib.$w$s^
+                        Lib.updateSeed3
+                        Lib.updateSeed2 of ww { DEFAULT ->
+                 GHC.Types.I# ww }) -}
+bda7220489895f4c14f9d74f856956af
+  updateSeed2 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (32) -}
+fc4a1b0175ec66b4f2b2e0023b8b5188
+  updateSeed3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 2#) -}
+3c6e46aee889f71e7d6efe982817492d
+  wallCollision :: Lib.Position -> Lib.Radius -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(LS(S)),1*U(A,1*U(U))><S(S),1*U(U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: (GHC.Types.Float, GHC.Types.Float))
+                   (radius :: Lib.Radius) ->
+                 case ds of wild { (,) ds1 y ->
+                 case y of wild2 { GHC.Types.F# x ->
+                 case radius of wild3 { GHC.Types.F# y1 ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.leFloat# (GHC.Prim.minusFloat# x y1) -150.0#) of wild1 {
+                   GHC.Types.False
+                   -> GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.geFloat# (GHC.Prim.plusFloat# x y1) 150.0#)
+                   GHC.Types.True -> GHC.Types.True } } } }) -}
+5fbb4a580c3002862081a9ef6237acc3
+  window :: Graphics.Gloss.Data.Display.Display
+  {- Strictness: m1,
+     Unfolding: (Graphics.Gloss.Data.Display.InWindow
+                   Lib.window4
+                   Lib.window3
+                   Lib.window1) -}
+773ad7d99a1d2016c2c92aaa455c5a49
+  window1 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Lib.window2, Lib.window2)) -}
+77f8df503a2bd8f7e04434e45890319f
+  window2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 10#) -}
+7d6814c2c8912eb1457ab1ed3b1856b8
+  window3 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Types.width, Types.width)) -}
+e6b39fa28611fdedd1c20d4ece4d3e21
+  window4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.window5) -}
+811d54ea8036ad05716c5164a9840da2
+  window5 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Pong"#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

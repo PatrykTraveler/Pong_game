@@ -40,7 +40,7 @@ module Lib where
     initialState :: PongGame
     initialState = Game{
         ballLoc = (-30, -60),
-        ballVel = (60, 60),
+        ballVel = (100, 100),
         player1 = 40,
         player2 = 80,
         stateUpClick = False,
@@ -95,6 +95,7 @@ module Lib where
                     -vx
                 else
                     vx
+            
     
     -- | Function that gets player move 
     playerMovement :: PongGame -> Int -> PongGame

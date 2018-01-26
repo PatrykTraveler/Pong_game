@@ -1,0 +1,425 @@
+
+==================== FINAL INTERFACE ====================
+2018-01-25 17:36:24.6528116 UTC
+
+interface pong-0.1.0.0-8CMk3jqaI7jHHOvmX9mthT:Lib 8022
+  interface hash: 9e687052b2c0d9234f2ae98da7c021d9
+  ABI hash: aef13b4ccaf145e0be5b31aaf6b61343
+  export-list hash: b3559b59e25168bbf26a39ae5f168e5e
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 358f195411f0db946ed50f60d29c8b8d
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Lib.doPong
+  Lib.wallCollision
+module dependencies: Types
+package dependencies: GLURaw-2.0.0.3 GLUT-2.7.0.12
+                      ObjectName-1.1.0.1 OpenGL-3.0.2.0 OpenGLRaw-3.2.7.0
+                      StateVar-1.1.0.4 array-0.5.2.0 base-4.10.1.0 binary-0.8.5.1
+                      bmp-1.2.6.3 bytestring-0.10.8.2 containers-0.5.10.2 deepseq-1.4.3.0
+                      fixed-0.2.1.1 ghc-prim-0.5.1.1 gloss-1.11.1.1
+                      gloss-rendering-1.11.1.1 half-0.2.2.3 integer-gmp-1.0.1.0
+                      stm-2.4.4.1 text-1.2.2.2
+orphans: gloss-rendering-1.11.1.1:Graphics.Gloss.Internals.Data.Picture
+         stm-2.4.4.1:Control.Monad.STM text-1.2.2.2:Data.Text
+         binary-0.8.5.1:Data.Binary.Generic text-1.2.2.2:Data.Text.Show
+         bytestring-0.10.8.2:Data.ByteString.Builder base-4.10.1.0:GHC.Float
+         base-4.10.1.0:GHC.Base
+family instance modules: base-4.10.1.0:Control.Applicative
+                         base-4.10.1.0:Data.Complex base-4.10.1.0:Data.Either
+                         base-4.10.1.0:Data.Functor.Compose base-4.10.1.0:Data.Functor.Const
+                         base-4.10.1.0:Data.Functor.Identity
+                         base-4.10.1.0:Data.Functor.Product base-4.10.1.0:Data.Functor.Sum
+                         base-4.10.1.0:Data.List.NonEmpty base-4.10.1.0:Data.Monoid
+                         base-4.10.1.0:Data.Semigroup base-4.10.1.0:Data.Type.Equality
+                         base-4.10.1.0:Data.Version base-4.10.1.0:Data.Void
+                         base-4.10.1.0:GHC.Exts base-4.10.1.0:GHC.Generics
+                         base-4.10.1.0:GHC.IO.Exception base-4.10.1.0:GHC.TypeLits
+                         base-4.10.1.0:GHC.TypeNats containers-0.5.10.2:Data.IntMap.Internal
+                         containers-0.5.10.2:Data.IntSet.Internal
+                         containers-0.5.10.2:Data.Map.Internal
+                         containers-0.5.10.2:Data.Sequence.Internal
+                         containers-0.5.10.2:Data.Set.Internal containers-0.5.10.2:Data.Tree
+                         text-1.2.2.2:Data.Text
+import  -/  base-4.10.1.0:Data.Tuple ab0c62ebfcacf00dcba54934885c5064
+import  -/  base-4.10.1.0:GHC.Base 8f949d675e49677c272f02ab7a85fe18
+import  -/  base-4.10.1.0:GHC.Num bee60808f8127e4cda82dd422aa1c6c0
+import  -/  base-4.10.1.0:GHC.Real 183566a07f0c201dd54a6bc28c33ed14
+import  -/  base-4.10.1.0:Prelude a93a9400cc0c816c2ee5f39399baa7a0
+import  -/  ghc-prim-0.5.1.1:GHC.Classes 64ad5910d03ab188ab9b4adef7487b1e
+import  -/  ghc-prim-0.5.1.1:GHC.Types b1fd0716441595db508c1a74387bf394
+import  -/  gloss-1.11.1.1:Graphics.Gloss cb068117ff81ac607d6a68ef8bf834c7
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.Color 4124038a4add9113deb7b51a32d841f0
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.Display 481418d17f135c575a7078ace34fe017
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.Picture f3369b99a291f67a98144c3f68e90812
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Data.ViewPort 59191dc9aa63af455f4753b55324176f
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Interface.Pure.Game 0ad883cb9fb6a5819477b707dd2d0120
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Internals.Interface.Backend.Types 3cdf5ad9716d6f310ea79c555c319ef9
+import  -/  gloss-1.11.1.1:Graphics.Gloss.Internals.Interface.Event 8aad44e3004e16684f6820a0c88da45b
+import  -/  gloss-rendering-1.11.1.1:Graphics.Gloss.Internals.Data.Color 0c37d5bd085f64128ed0f2cd539347e1
+import  -/  gloss-rendering-1.11.1.1:Graphics.Gloss.Internals.Data.Picture 46309d19e6ae24eae0737e223f9a2514
+import  -/  Types 5190f2d1d8e679db9125cca16245aa37
+  exports: 142562f83f2319f590d8af3fc545fd71
+  Game 4474e539aab5f1b0f2dfcc88a9a9b8bd
+  PongGame 955671ae9c4165c1f0a5f03eea424200
+  ballLoc 955671ae9c4165c1f0a5f03eea424200
+  ballVel 955671ae9c4165c1f0a5f03eea424200
+  fps cb6a7d2d8ea0f6a2740ed372c7a0c2c1
+  height 9a14ff9d47ef2b5bbd41c5a308dea9e5
+  moveOffset 7a6fb5a60506ad76a7c47c15f1e35564
+  player1 955671ae9c4165c1f0a5f03eea424200
+  player2 955671ae9c4165c1f0a5f03eea424200
+  playerHeight 5005a4564ec5afea2cb72ae386934f59
+  playerWidth 91dc4062ea9dd7155de0c2596dccfe07
+  seed 955671ae9c4165c1f0a5f03eea424200
+  stateDownClick 955671ae9c4165c1f0a5f03eea424200
+  stateUpClick 955671ae9c4165c1f0a5f03eea424200
+  width a2b702ee6046b37f194c7e0afd230f82
+0025ffad7d8f235ae482add24daa30e3
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Lib.$trModule3 Lib.$trModule1) -}
+ad03de3d8c78c775241318cb7807a87c
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Lib.$trModule2) -}
+cf7c4b9a6ea821996c82b960f7879716
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Lib"#) -}
+ff0efb5d9e3b110cdd3bee7be25105e1
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Lib.$trModule4) -}
+82a6faad9cd2f6d61574914b114ca94f
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("pong-0.1.0.0-8CMk3jqaI7jHHOvmX9mthT"#) -}
+a5806f033c80df0e6b84202303d95ade
+  type Position = (GHC.Types.Float, GHC.Types.Float)
+4df16256f3bd7f5d8610217866af2ab1
+  type Radius = GHC.Types.Float
+2ee647e595bb80fd7055c37dfa0e6388
+  doPong :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.doPong1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+eabe78838ac9ee029d898e8a0030d956
+  doPong1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Graphics.Gloss.Internals.Interface.Game.playWithBackendIO1
+                        @ Types.PongGame
+                        @ Graphics.Gloss.Internals.Interface.Backend.GLUT.GLUTState
+                        Graphics.Gloss.Internals.Interface.Backend.GLUT.$fBackendGLUTState
+                        Graphics.Gloss.Internals.Interface.Backend.GLUT.glutStateInit
+                        Lib.doPong23
+                        Graphics.Gloss.Data.Color.white
+                        Types.fps
+                        Lib.doPong16
+                        Lib.doPong4
+                          `cast`
+                        (<Types.PongGame>_R
+                         ->_R Sym (GHC.Types.N:IO[0]
+                                       <Graphics.Gloss.Internals.Data.Picture.Picture>_R))
+                        Lib.doPong3
+                          `cast`
+                        (<Graphics.Gloss.Internals.Interface.Event.Event>_R
+                         ->_R <Types.PongGame>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <Types.PongGame>_R))
+                        Lib.doPong2
+                          `cast`
+                        (<GHC.Types.Float>_R
+                         ->_R <Types.PongGame>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <Types.PongGame>_R))
+                        GHC.Types.True
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv, GHC.Tuple.() #) }) -}
+201571fb48803297f910201f8c29db3f
+  doPong10 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -145.0#) -}
+37fa75516de451f630d786b6ce28b197
+  doPong11 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m10,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
+                   Graphics.Gloss.Data.Color.black
+                   Lib.doPong6) -}
+3e346ec5cab0f6103953e04ab01bb84b
+  doPong12 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 145.0#) -}
+a4914b6e3ffcaa35fbd3361b3e60e727
+  doPong13 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m10,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
+                   Graphics.Gloss.Data.Color.black
+                   Lib.doPong14) -}
+81cc99ddb7bced2480ae28ff213c6c46
+  doPong14 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m2,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Polygon
+                   Lib.doPong15) -}
+394d5068f7d23db53cfa6a8eba8f49b2
+  doPong15 :: Graphics.Gloss.Internals.Data.Picture.Path
+  {- Unfolding: (case Graphics.Gloss.Data.Picture.$wrectanglePath
+                        Lib.doPong9
+                        Lib.doPong9 of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.:
+                   @ Graphics.Gloss.Internals.Data.Picture.Point
+                   ww1
+                   ww2 }) -}
+49bf807a8dbfbd31ef4184dca6f7a30b
+  doPong16 :: Types.PongGame
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Types.Game
+                   Lib.doPong20
+                   Lib.doPong18
+                   Lib.doPong17
+                   Lib.doPong8
+                   GHC.Types.False
+                   GHC.Types.False
+                   149327498#) -}
+b590063136b943ac4124b408fd4889f4
+  doPong17 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 40.0#) -}
+36139192f9fa2c8c7b28798a19bcc662
+  doPong18 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Lib.doPong19, Lib.doPong19)) -}
+f7daa852fc74bf66ee70dfff0c00be29
+  doPong19 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 60.0#) -}
+45d97c99fe4e8387f328699409a33776
+  doPong2 ::
+    GHC.Types.Float
+    -> Types.PongGame
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Types.PongGame #)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(U)><L,1*U(U(1*U(U),1*U(U)),U(1*U(U),1*U(U)),U(U),U(U),U,U,U)><S,U> -}
+8cac72c5c97aa5f0bf8f7f24c4138ea8
+  doPong20 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Lib.doPong22, Lib.doPong21)) -}
+0e560087061134c2022d2d6d5df0f82b
+  doPong21 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# -60.0#) -}
+9ce54bdd7582b3e46c089c8af2692158
+  doPong22 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# -30.0#) -}
+e067d972cff58d98071aecfbe809fa3b
+  doPong23 :: Graphics.Gloss.Data.Display.Display
+  {- Strictness: m1,
+     Unfolding: (Graphics.Gloss.Data.Display.InWindow
+                   Lib.doPong27
+                   Lib.doPong26
+                   Lib.doPong24) -}
+60036aa03db54f9959b9af3fb460e12a
+  doPong24 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Lib.doPong25, Lib.doPong25)) -}
+13a8eedac7dc00f97df3a09bdc357cbf
+  doPong25 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 10#) -}
+992fe869ba91236061fb995315e89d1c
+  doPong26 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Types.width, Types.width)) -}
+3ab321cfc975724b15db13739a5aa436
+  doPong27 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.doPong28) -}
+9d3c469b6a3aec4f698535978e07054f
+  doPong28 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Pong"#) -}
+32b5132274000d72c11ec8d8340032ca
+  doPong3 ::
+    Graphics.Gloss.Internals.Interface.Event.Event
+    -> Types.PongGame
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Types.PongGame #)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U><L,1*U(U,U,U,U,U,U,U)><S,U>,
+     Unfolding: (\ (event :: Graphics.Gloss.Internals.Interface.Event.Event)
+                   (world1 :: Types.PongGame)[OneShot]
+                   (s1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s1,
+                    let {
+                      fail :: GHC.Prim.Void# -> Types.PongGame
+                        <join 1> {- Arity: 1, Strictness: <L,A> -}
+                      = \ (ds :: GHC.Prim.Void#)[OneShot] ->
+                        let {
+                          fail1 :: GHC.Prim.Void# -> Types.PongGame
+                            <join 1> {- Arity: 1, Strictness: <L,A> -}
+                          = \ (ds1 :: GHC.Prim.Void#)[OneShot] ->
+                            let {
+                              fail2 :: GHC.Prim.Void# -> Types.PongGame
+                                <join 1> {- Arity: 1, Strictness: <L,A> -}
+                              = \ (ds2 :: GHC.Prim.Void#)[OneShot] ->
+                                case event of wild {
+                                  DEFAULT -> world1
+                                  Graphics.Gloss.Internals.Interface.Event.EventKey ds3 ds4 ds5 ds6
+                                  -> case ds3 of wild1 {
+                                       DEFAULT -> world1
+                                       Graphics.Gloss.Internals.Interface.Backend.Types.SpecialKey ds7
+                                       -> case ds7 of wild2 {
+                                            DEFAULT -> world1
+                                            Graphics.Gloss.Internals.Interface.Backend.Types.KeyDown
+                                            -> case ds4 of wild3 {
+                                                 Graphics.Gloss.Internals.Interface.Backend.Types.Down
+                                                 -> world1
+                                                 Graphics.Gloss.Internals.Interface.Backend.Types.Up
+                                                 -> case world1 of wild4 { Types.Game ds8 ds9 ds10 ds11 ds12 ds13 dt ->
+                                                    Types.Game
+                                                      ds8
+                                                      ds9
+                                                      ds10
+                                                      ds11
+                                                      ds12
+                                                      GHC.Types.False
+                                                      dt } } } } }
+                            } in
+                            case event of wild {
+                              DEFAULT -> fail2 GHC.Prim.void#
+                              Graphics.Gloss.Internals.Interface.Event.EventKey ds2 ds3 ds4 ds5
+                              -> case ds2 of wild1 {
+                                   DEFAULT -> fail2 GHC.Prim.void#
+                                   Graphics.Gloss.Internals.Interface.Backend.Types.SpecialKey ds6
+                                   -> case ds6 of wild2 {
+                                        DEFAULT -> fail2 GHC.Prim.void#
+                                        Graphics.Gloss.Internals.Interface.Backend.Types.KeyDown
+                                        -> case ds3 of wild3 {
+                                             Graphics.Gloss.Internals.Interface.Backend.Types.Down
+                                             -> case world1 of wild4 { Types.Game ds7 ds8 ds9 ds10 ds11 ds12 dt ->
+                                                Types.Game ds7 ds8 ds9 ds10 ds11 GHC.Types.True dt }
+                                             Graphics.Gloss.Internals.Interface.Backend.Types.Up
+                                             -> fail2 GHC.Prim.void# } } } }
+                        } in
+                        case event of wild {
+                          DEFAULT -> fail1 GHC.Prim.void#
+                          Graphics.Gloss.Internals.Interface.Event.EventKey ds1 ds2 ds3 ds4
+                          -> case ds1 of wild1 {
+                               DEFAULT -> fail1 GHC.Prim.void#
+                               Graphics.Gloss.Internals.Interface.Backend.Types.SpecialKey ds5
+                               -> case ds5 of wild2 {
+                                    DEFAULT -> fail1 GHC.Prim.void#
+                                    Graphics.Gloss.Internals.Interface.Backend.Types.KeyUp
+                                    -> case ds2 of wild3 {
+                                         Graphics.Gloss.Internals.Interface.Backend.Types.Down
+                                         -> fail1 GHC.Prim.void#
+                                         Graphics.Gloss.Internals.Interface.Backend.Types.Up
+                                         -> case world1 of wild4 { Types.Game ds6 ds7 ds8 ds9 ds10 ds11 dt ->
+                                            Types.Game
+                                              ds6
+                                              ds7
+                                              ds8
+                                              ds9
+                                              GHC.Types.False
+                                              ds11
+                                              dt } } } } }
+                    } in
+                    case event of wild {
+                      DEFAULT -> fail GHC.Prim.void#
+                      Graphics.Gloss.Internals.Interface.Event.EventKey ds ds1 ds2 ds3
+                      -> case ds of wild1 {
+                           DEFAULT -> fail GHC.Prim.void#
+                           Graphics.Gloss.Internals.Interface.Backend.Types.SpecialKey ds4
+                           -> case ds4 of wild2 {
+                                DEFAULT -> fail GHC.Prim.void#
+                                Graphics.Gloss.Internals.Interface.Backend.Types.KeyUp
+                                -> case ds1 of wild3 {
+                                     Graphics.Gloss.Internals.Interface.Backend.Types.Down
+                                     -> case world1 of wild4 { Types.Game ds5 ds6 ds7 ds8 ds9 ds10 dt ->
+                                        Types.Game ds5 ds6 ds7 ds8 GHC.Types.True ds10 dt }
+                                     Graphics.Gloss.Internals.Interface.Backend.Types.Up
+                                     -> fail GHC.Prim.void# } } } } #)) -}
+a3ef56e2f28d5009075dc05824beffef
+  doPong4 ::
+    Types.PongGame
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Graphics.Gloss.Internals.Data.Picture.Picture #)
+  {- Arity: 2,
+     Strictness: <L,U(1*U(1*U,1*U),A,1*U(U),1*U(U),A,A,A)><S,U>,
+     Unfolding: (\ (x :: Types.PongGame)
+                   (s1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s1,
+                    Graphics.Gloss.Internals.Data.Picture.Pictures
+                      (GHC.Types.:
+                         @ Graphics.Gloss.Internals.Data.Picture.Picture
+                         (let {
+                            p :: (GHC.Types.Float, GHC.Types.Float)
+                            = case x of wild { Types.Game ds1 ds2 ds3 ds4 ds5 ds6 dt -> ds1 }
+                          } in
+                          Graphics.Gloss.Internals.Data.Picture.Translate
+                            (case p of wild { (,) x1 ds -> x1 })
+                            (case p of wild { (,) ds y -> y })
+                            Lib.doPong13)
+                         (GHC.Types.:
+                            @ Graphics.Gloss.Internals.Data.Picture.Picture
+                            (Graphics.Gloss.Internals.Data.Picture.Translate
+                               Lib.doPong12
+                               (Types.player1 x)
+                               Lib.doPong11)
+                            (GHC.Types.:
+                               @ Graphics.Gloss.Internals.Data.Picture.Picture
+                               (Graphics.Gloss.Internals.Data.Picture.Translate
+                                  Lib.doPong10
+                                  (Types.player2 x)
+                                  Lib.doPong5)
+                               (GHC.Types.[]
+                                  @ Graphics.Gloss.Internals.Data.Picture.Picture)))) #)) -}
+5ca0f2f1b7905fe25c1534dad7c19aa5
+  doPong5 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m10,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
+                   Graphics.Gloss.Data.Color.red
+                   Lib.doPong6) -}
+aae26614fa5768a77aa310bb45e9547b
+  doPong6 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m2,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Polygon
+                   Lib.doPong7) -}
+2cce0d80ca4190dd7ebee11119f7278f
+  doPong7 :: Graphics.Gloss.Internals.Data.Picture.Path
+  {- Unfolding: (case Graphics.Gloss.Data.Picture.$wrectanglePath
+                        Lib.doPong9
+                        Lib.doPong8 of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.:
+                   @ Graphics.Gloss.Internals.Data.Picture.Point
+                   ww1
+                   ww2 }) -}
+a3622fed9a6f5abe3b8e9931870faa8b
+  doPong8 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 80.0#) -}
+47934fc333dd8dc02f5de1b5c9a8bb7f
+  doPong9 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 10.0#) -}
+5768e0354af32137645b25e20af74620
+  wallCollision :: Lib.Position -> Lib.Radius -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(LS(S)),1*U(A,1*U(U))><S(S),1*U(U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: (GHC.Types.Float, GHC.Types.Float))
+                   (radius :: Lib.Radius) ->
+                 case ds of wild { (,) ds1 y ->
+                 case y of wild2 { GHC.Types.F# x ->
+                 case radius of wild3 { GHC.Types.F# y1 ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.leFloat# (GHC.Prim.minusFloat# x y1) -150.0#) of wild1 {
+                   GHC.Types.False
+                   -> GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.geFloat# (GHC.Prim.plusFloat# x y1) 150.0#)
+                   GHC.Types.True -> GHC.Types.True } } } }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

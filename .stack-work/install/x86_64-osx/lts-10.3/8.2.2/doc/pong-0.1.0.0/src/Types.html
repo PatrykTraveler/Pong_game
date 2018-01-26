@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Types</span><span> </span><span class="hs-keyword">where</span><span></span><span>
+</span><a name="line-2"></a><span></span><span>
+</span><a name="line-3"></a><span class="hs-comment">-- * Data that changes during the game</span><span>
+</span><a name="line-4"></a><span></span><span>
+</span><a name="line-5"></a><span class="hs-keyword">data</span><span> </span><a name="PongGame"><a href="Types.html#PongGame"><span class="hs-identifier">PongGame</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><a name="Game"><a href="Types.html#Game"><span class="hs-identifier">Game</span></a></a><span class="hs-special">{</span><span></span><span>
+</span><a name="line-6"></a><span>    </span><span class="hs-comment">-- | Stores ball position</span><span>
+</span><a name="line-7"></a><span>    </span><a name="ballLoc"><a href="Types.html#ballLoc"><span class="hs-identifier">ballLoc</span></a></a><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-type">Float</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">Float</span><span class="hs-special">)</span><span class="hs-special">,</span><span></span><span>
+</span><a name="line-8"></a><span>    </span><span class="hs-comment">-- | Stores ball velocity vector</span><span>
+</span><a name="line-9"></a><span>    </span><a name="ballVel"><a href="Types.html#ballVel"><span class="hs-identifier">ballVel</span></a></a><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-type">Float</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">Float</span><span class="hs-special">)</span><span class="hs-special">,</span><span></span><span>
+</span><a name="line-10"></a><span>    </span><span class="hs-comment">-- | Stores player 1 Y - position</span><span>
+</span><a name="line-11"></a><span>    </span><a name="player1"><a href="Types.html#player1"><span class="hs-identifier">player1</span></a></a><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Float</span><span class="hs-special">,</span><span></span><span>
+</span><a name="line-12"></a><span>    </span><span class="hs-comment">-- | Stores player 2 Y - position</span><span>
+</span><a name="line-13"></a><span>    </span><a name="player2"><a href="Types.html#player2"><span class="hs-identifier">player2</span></a></a><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Float</span><span class="hs-special">,</span><span></span><span>
+</span><a name="line-14"></a><span></span><span>
+</span><a name="line-15"></a><span>    </span><span class="hs-comment">-- | Stores boolean value that stores if up-button is pressed</span><span>
+</span><a name="line-16"></a><span>    </span><a name="stateUpClick"><a href="Types.html#stateUpClick"><span class="hs-identifier">stateUpClick</span></a></a><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-glyph">!</span><span class="hs-identifier hs-type">Bool</span><span class="hs-special">,</span><span></span><span>
+</span><a name="line-17"></a><span>    </span><span>
+</span><a name="line-18"></a><span>    </span><span class="hs-comment">-- | Stores boolean value that stores if down-button is pressed</span><span>
+</span><a name="line-19"></a><span>    </span><a name="stateDownClick"><a href="Types.html#stateDownClick"><span class="hs-identifier">stateDownClick</span></a></a><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-glyph">!</span><span class="hs-identifier hs-type">Bool</span><span class="hs-special">,</span><span></span><span>
+</span><a name="line-20"></a><span></span><span>
+</span><a name="line-21"></a><span>    </span><span class="hs-comment">-- | Seed used to randomize ball position</span><span>
+</span><a name="line-22"></a><span>    </span><a name="seed"><a href="Types.html#seed"><span class="hs-identifier">seed</span></a></a><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-glyph">!</span><span class="hs-identifier hs-type">Int</span><span></span><span>
+</span><a name="line-23"></a><span class="hs-special">}</span><span class="hs-keyword">deriving</span><span> </span><span class="hs-identifier hs-type">Show</span><span></span><span>
+</span><a name="line-24"></a><span></span><span>
+</span><a name="line-25"></a><span class="hs-comment">-- | Stores width of game field </span><span>
+</span><a name="line-26"></a><span class="hs-identifier">width</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span></span><span>
+</span><a name="line-27"></a><span class="hs-comment">-- | Stores height of game field</span><span>
+</span><a name="line-28"></a><span class="hs-identifier">height</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span></span><span>
+</span><a name="line-29"></a><span></span><span>
+</span><a name="line-30"></a><a name="width"><a href="Types.html#width"><span class="hs-identifier">width</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">300</span><span> </span><span>
+</span><a name="line-31"></a><a name="height"><a href="Types.html#height"><span class="hs-identifier">height</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">300</span><span> </span><span>
+</span><a name="line-32"></a><span></span><span>
+</span><a name="line-33"></a><span class="hs-comment">-- * Variables that can't be changed after start of the game</span><span>
+</span><a name="line-34"></a><span></span><span>
+</span><a name="line-35"></a><span class="hs-comment">-- | Stores width of the paddle </span><span>
+</span><a name="line-36"></a><span class="hs-identifier">playerWidth</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span> </span><span>
+</span><a name="line-37"></a><span class="hs-comment">-- | Stores height of the paddle </span><span>
+</span><a name="line-38"></a><span class="hs-identifier">playerHeight</span><span> </span><span class="hs-glyph">::</span><span class="hs-identifier hs-type">Int</span><span></span><span>
+</span><a name="line-39"></a><span class="hs-comment">-- | Stores the move offset that tells how far the paddle moves during time between frames</span><span>
+</span><a name="line-40"></a><span class="hs-identifier">moveOffset</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span></span><span>
+</span><a name="line-41"></a><span></span><span>
+</span><a name="line-42"></a><a name="playerWidth"><a href="Types.html#playerWidth"><span class="hs-identifier">playerWidth</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">10</span><span> </span><span>
+</span><a name="line-43"></a><a name="playerHeight"><a href="Types.html#playerHeight"><span class="hs-identifier">playerHeight</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">80</span><span> </span><span>
+</span><a name="line-44"></a><a name="moveOffset"><a href="Types.html#moveOffset"><span class="hs-identifier">moveOffset</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">3</span><span> </span><span>
+</span><a name="line-45"></a><span></span><span>
+</span><a name="line-46"></a><span class="hs-comment">-- | Stores the number of frames per second</span><span>
+</span><a name="line-47"></a><span class="hs-identifier">fps</span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-identifier hs-type">Int</span><span></span><span>
+</span><a name="line-48"></a><a name="fps"><a href="Types.html#fps"><span class="hs-identifier">fps</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-number">60</span></pre></body></html>

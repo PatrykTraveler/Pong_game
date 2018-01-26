@@ -1,0 +1,251 @@
+
+==================== FINAL INTERFACE ====================
+2018-01-26 16:42:51.008164 UTC
+
+interface pong-0.1.0.0-45Av3NiH7k27u3wdtFfT3A:Types 8022
+  interface hash: cdf62b68056c1649c20ea0626a82f8d1
+  ABI hash: 54a1f4cc6d0331760c13d68e0b2a5810
+  export-list hash: c9903c023b7a2b8e0da49e31889ea802
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 0451a77cc0d8e5d99d548d6441c7dd35
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Types.fps
+  Types.height
+  Types.moveOffset
+  Types.playerHeight
+  Types.playerWidth
+  Types.width
+  Types.PongGame{Types.Game ballLoc ballVel player1 player2 seed stateDownClick stateUpClick}
+module dependencies:
+package dependencies: base-4.10.1.0* ghc-prim-0.5.1.1
+                      integer-gmp-1.0.1.0
+orphans: base-4.10.1.0:GHC.Float base-4.10.1.0:GHC.Base
+family instance modules: base-4.10.1.0:Control.Applicative
+                         base-4.10.1.0:Data.Either base-4.10.1.0:Data.Functor.Const
+                         base-4.10.1.0:Data.Functor.Identity base-4.10.1.0:Data.Monoid
+                         base-4.10.1.0:Data.Type.Equality base-4.10.1.0:GHC.Generics
+                         base-4.10.1.0:GHC.IO.Exception base-4.10.1.0:GHC.TypeLits
+                         base-4.10.1.0:GHC.TypeNats
+import  -/  base-4.10.1.0:GHC.Base 782fd99b5e36f3698a26179a49afca64
+import  -/  base-4.10.1.0:GHC.Show 0a8ce2b5e533d1c2cfb7954e6736be45
+import  -/  base-4.10.1.0:Prelude 31945b7d0084063347fc52506d3a4020
+import  -/  ghc-prim-0.5.1.1:GHC.Classes 93e2660065dce9329577e83d76d8f0d4
+726f6eb892a79a33738a50af95c728e5
+  $fShowPongGame :: GHC.Show.Show Types.PongGame
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Types.PongGame
+                  Types.$fShowPongGame_$cshowsPrec
+                  Types.$fShowPongGame_$cshow
+                  Types.$fShowPongGame_$cshowList -}
+726f6eb892a79a33738a50af95c728e5
+  $fShowPongGame1 :: Types.PongGame -> GHC.Show.ShowS
+  {- Arity: 1,
+     Strictness: <S(LLLLSSS),1*U(U(U(U),U(U)),U(U(U),U(U)),1*U(U),1*U(U),U,U,U)>,
+     Unfolding: (\ (w :: Types.PongGame) ->
+                 case w of ww { Types.Game ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 Types.$w$cshowsPrec 0# ww1 ww2 ww3 ww4 ww5 ww6 ww7 }) -}
+05c9e934bf2a622fe3b8b5a649999ad9
+  $fShowPongGame2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+726f6eb892a79a33738a50af95c728e5
+  $fShowPongGame_$cshow :: Types.PongGame -> GHC.Base.String
+  {- Arity: 1,
+     Strictness: <S(LLLLSSS),1*U(U(U(U),U(U)),U(U(U),U(U)),1*U(U),1*U(U),U,U,U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Types.PongGame) ->
+                 Types.$fShowPongGame_$cshowsPrec
+                   Types.$fShowPongGame2
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+726f6eb892a79a33738a50af95c728e5
+  $fShowPongGame_$cshowList :: [Types.PongGame] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Types.PongGame
+                   Types.$fShowPongGame1) -}
+726f6eb892a79a33738a50af95c728e5
+  $fShowPongGame_$cshowsPrec ::
+    GHC.Types.Int -> Types.PongGame -> GHC.Show.ShowS
+  {- Arity: 2,
+     Strictness: <S(S),1*U(U)><S(LLLLSSS),1*U(U(U(U),U(U)),U(U(U),U(U)),1*U(U),1*U(U),U,U,U)>,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Types.PongGame) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Types.Game ww3 ww4 ww5 ww6 ww7 ww8 ww9 ->
+                 Types.$w$cshowsPrec ww1 ww3 ww4 ww5 ww6 ww7 ww8 ww9 } }) -}
+2eda7a31bcc8f135141d62991e6cb4e4
+  $tc'Game :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14869796593926383702##
+                   17550693285447425345##
+                   Types.$trModule
+                   Types.$tc'Game2
+                   0#
+                   Types.$tc'Game1) -}
+54e60a774a4da2e1163a91a7b6b3c833
+  $tc'Game1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+4d1fb8c3273ffa7febcb3c6aa583def4
+  $tc'Game2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Game3) -}
+86d05a341132bc906b1fe62217bcefbe
+  $tc'Game3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Game"#) -}
+d45a99bc20be82f5406a94e554c293d4
+  $tcPongGame :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4987326696005264754##
+                   8803297677902086611##
+                   Types.$trModule
+                   Types.$tcPongGame1
+                   0#
+                   GHC.Types.krep$*) -}
+67078652dbd5cb982dfe7d3a0cdde39e
+  $tcPongGame1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tcPongGame2) -}
+0aacedc516071f1e09058900853babf5
+  $tcPongGame2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("PongGame"#) -}
+36e366c0b5bafc8f3e12b4c0c6aeb3a6
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Types.$trModule3 Types.$trModule1) -}
+ed3f664b8fda67a604cc2655aadbf57e
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$trModule2) -}
+10d254088fb0b0714366c500a2d1a69b
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Types"#) -}
+22bae986616424210fca88ceaf14cfd3
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$trModule4) -}
+08328b45ee92e89531a1de7065a36e53
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("pong-0.1.0.0-45Av3NiH7k27u3wdtFfT3A"#) -}
+e30f216e0f06ceef64522358df0cf04a
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> (GHC.Types.Float, GHC.Types.Float)
+    -> (GHC.Types.Float, GHC.Types.Float)
+    -> GHC.Types.Float
+    -> GHC.Types.Float
+    -> GHC.Types.Bool
+    -> GHC.Types.Bool
+    -> GHC.Prim.Int#
+    -> GHC.Show.ShowS
+  {- Arity: 8,
+     Strictness: <S,U><L,U(U(U),U(U))><L,U(U(U),U(U))><L,1*U(U)><L,1*U(U)><L,U><L,U><L,U>,
+     Inline: [0] -}
+726f6eb892a79a33738a50af95c728e5
+  data PongGame
+    = Game {ballLoc :: (GHC.Types.Float, GHC.Types.Float),
+            ballVel :: (GHC.Types.Float, GHC.Types.Float),
+            player1 :: GHC.Types.Float,
+            player2 :: GHC.Types.Float,
+            stateUpClick :: !GHC.Types.Bool,
+            stateDownClick :: !GHC.Types.Bool,
+            seed :: {-# UNPACK #-}GHC.Types.Int}
+726f6eb892a79a33738a50af95c728e5
+  ballLoc :: Types.PongGame -> (GHC.Types.Float, GHC.Types.Float)
+  RecSel Left Types.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLLLL),1*U(1*U(U,U),A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.PongGame) ->
+                 case ds of wild { Types.Game ds1 ds2 ds3 ds4 ds5 ds6 dt ->
+                 ds1 }) -}
+726f6eb892a79a33738a50af95c728e5
+  ballVel :: Types.PongGame -> (GHC.Types.Float, GHC.Types.Float)
+  RecSel Left Types.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLLLL),1*U(A,1*U(U,U),A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.PongGame) ->
+                 case ds of wild { Types.Game ds1 ds2 ds3 ds4 ds5 ds6 dt ->
+                 ds2 }) -}
+611442d4fbf1f46ca033908f32383c56
+  fps :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 60#) -}
+6cebd42c3ec4ac0ae3af8bc5a8a0371b
+  height :: GHC.Types.Int
+  {- Strictness: m, Unfolding: (Types.width) -}
+0b8a01acb3249da66a1c6c012a4011fb
+  moveOffset :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 3#) -}
+726f6eb892a79a33738a50af95c728e5
+  player1 :: Types.PongGame -> GHC.Types.Float
+  RecSel Left Types.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLLLL),1*U(A,A,1*U(U),A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.PongGame) ->
+                 case ds of wild { Types.Game ds1 ds2 ds3 ds4 ds5 ds6 dt ->
+                 ds3 }) -}
+726f6eb892a79a33738a50af95c728e5
+  player2 :: Types.PongGame -> GHC.Types.Float
+  RecSel Left Types.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSLLL),1*U(A,A,A,1*U(U),A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.PongGame) ->
+                 case ds of wild { Types.Game ds1 ds2 ds3 ds4 ds5 ds6 dt ->
+                 ds4 }) -}
+c699194af3a42f8e7e03c9215950f8e4
+  playerHeight :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 80#) -}
+2ba853501281ddf1350c02fb8af83d19
+  playerWidth :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 10#) -}
+726f6eb892a79a33738a50af95c728e5
+  seed :: Types.PongGame -> GHC.Types.Int
+  RecSel Left Types.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLS),1*U(A,A,A,A,A,A,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.PongGame) ->
+                 case ds of wild { Types.Game ds1 ds2 ds3 ds4 ds5 ds6 dt ->
+                 GHC.Types.I# dt }) -}
+726f6eb892a79a33738a50af95c728e5
+  stateDownClick :: Types.PongGame -> GHC.Types.Bool
+  RecSel Left Types.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLSL),1*U(A,A,A,A,A,U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.PongGame) ->
+                 case ds of wild { Types.Game ds1 ds2 ds3 ds4 ds5 ds6 dt ->
+                 ds6 }) -}
+726f6eb892a79a33738a50af95c728e5
+  stateUpClick :: Types.PongGame -> GHC.Types.Bool
+  RecSel Left Types.PongGame
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSLL),1*U(A,A,A,A,U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.PongGame) ->
+                 case ds of wild { Types.Game ds1 ds2 ds3 ds4 ds5 ds6 dt ->
+                 ds5 }) -}
+22ab7d56fb87b518ecdee3e1b824d0f9
+  width :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 300#) -}
+instance [safe] GHC.Show.Show [Types.PongGame]
+  = Types.$fShowPongGame
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
